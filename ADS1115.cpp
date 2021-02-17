@@ -3,6 +3,7 @@
 ADS1115::ADS1115(I2C_HandleTypeDef* hi2c, ADS1115_ADDRESS addr) : hi2c(hi2c), addr(addr) {}
 
 ADS1115::~ADS1115() {
+	delete[] regBits;
 }
 
 void ADS1115::setRegBits(OS os, MUX mux, PGA pga, MODE mode, DR dr, COMP_MODE comp_mode, COMP_POL comp_pol, COMP_LAT comp_lat, COMP_QUE comp_que) {
